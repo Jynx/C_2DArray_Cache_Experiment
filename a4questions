@@ -1,0 +1,132 @@
+Name (and partner's name): Steven Volocyk
+Section (and partner's section):
+
+Assignment 4 questions.
+Do not remove the questions from this file.
+Please indent your answers.
+
+For ALL cache simulations, use a capacity of 32768 bytes for both 
+the I-cache and the D-cache.
+
+cache1D
+-------
+
+Describe how you tested your code to verify that it works. 
+
+  After allocating memory and checking to make sure it was allocated correctly,I implemented a check via an if statement to make sure that each index of the array had the correct contents of -3 for each iteration of the various loops. 
+
+What do you get from running pin with a block size of 4 bytes?
+
+  Instruction cache misses: 6351
+  Instruction cache references: 16177994
+  Data cache misses:    2016440
+  Data cache references:    12091311
+
+What is the hit ratio for the I-cache with a block size of 4 bytes?
+
+  99.96%
+
+What is the hit ratio for the D-cache with a block size of 4 bytes?
+
+  83.32%
+
+What do you get from running pin with a block size of 32 bytes?
+
+  Instruction cache misses: 1233
+  Instruction cache references: 16177994
+  Data cache misses:    260942
+  Data cache references:    12091311
+
+What is the hit ratio for the I-cache with a block size of 32 bytes?
+
+  99.99%
+
+What is the hit ratio for the D-cache with a block size of 32 bytes?
+
+  97.84%
+
+What do you get from running pin with a block size of 64 bytes?
+
+  Instruction cache misses: 732
+  Instruction cache references: 16177994
+  Data cache misses:    142425
+  Data cache references:    12091311
+
+What is the hit ratio for the I-cache with a block size of 64 bytes?
+
+  .9999557 or 
+  ~100%
+
+What is the hit ratio for the D-cache with a block size of 64 bytes?
+
+  98.82%
+
+Which block size is best for the I-cache?  Why?
+
+  The best blocksize for the I-cache is the 64 byte block because it results in
+  the highest hit ratio. However, the difference between 4 bytes to 64 bytes is much 
+  more minimal than the differences seen in the D-cache between the block-sizes.
+
+Which block size is best for the D-cache?  Why? In what way does the block 
+size affect the hit ratio for this program? 
+
+  The best blocksize for the D-cache is also the 64 byte block-size. It results in the 
+  highest hit ratio. The higher block size allows for a higher number of memory locations 
+  to be stored on the cache.
+  
+
+cache2Drows
+-----------
+
+What do you get from running pin with a block size of 64 bytes?
+
+  Instruction cache misses: 858
+  Instruction cache references: 24610559
+  Data cache misses:    153194
+  Data cache references:    16322166
+
+
+What is the hit ratio for the I-cache with a block size of 64 bytes?
+
+  99.9999%
+
+What is the hit ratio for the D-cache with a block size of 64 bytes?
+
+  99.06%
+
+cache2Dcols
+-----------
+
+What do you get from running pin with a block size of 64 bytes?
+
+  Instruction cache misses: 859
+  Instruction cache references: 24603559
+  Data cache misses:    2177117
+  Data cache references:    16317166
+
+What is the hit ratio for the I-cache with a block size of 64 bytes?
+
+  99.9%
+
+What is the hit ratio for the D-cache with a block size of 64 bytes?
+
+  86.6%
+
+
+Comparison of cache2Drows and cache2Dcols
+-----------------------------------------
+
+Compare the performance (hit ratios) of the I-cache for these 2 programs.
+Justify your statistics.
+
+  The performance for the I-cache for both programs is very similar. The 
+  instructions for each program are identical, so this makes perfect sense. Its
+  only in the d-cache that things will differ with any significance. 
+
+Compare the performance (hit ratios) of the D-cache for these 2 programs.
+Explain any differences.
+
+  In one instance, the cache has to reference to each beginning (whereever that
+  may be) of each array before accessing the index of THAT array. In one implmentation
+  (the 2Dcols) the cache is jumping back and forth between arrays, where as in the other, it's going through one at a time. 
+
